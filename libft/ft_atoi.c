@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 09:03:53 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/06/17 11:00:03 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/10 14:18:37 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	ft_atoi(const char *str)
 	{
 		nb = nb * 10 + (str[i++] - '0');
 		if ((nb * negative) > INT_MAX)
-			return (-1);
+			return ('f');
 		if ((nb * negative) < INT_MIN)
-			return (0);
+			return ('f');
 	}
 	return (nb * negative);
 }
