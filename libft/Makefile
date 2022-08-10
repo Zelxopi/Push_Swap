@@ -6,7 +6,7 @@
 #    By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/22 12:48:17 by mtrembla          #+#    #+#              #
-#    Updated: 2022/06/22 12:02:34 by mtrembla         ###   ########.fr        #
+#    Updated: 2022/08/09 14:40:33 by mtrembla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRCS = ft_isalpha.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c \
 	   ft_gnl.c \
+	   ft_strcmp.c \
 	 
 BONUS =	ft_lstnew.c \
 	  	ft_lstadd_front.c \
@@ -61,7 +62,7 @@ BONUS =	ft_lstnew.c \
 	   	ft_lstmap.c \
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -c -g
+CFLAGS = -Wall -Wextra -Werror -c
 AR = ar rc
 RM = rm -f
 OBJS = $(SRCS:.c=.o)

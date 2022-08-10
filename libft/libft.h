@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 14:05:57 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/02 10:18:24 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/09 14:40:03 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-typedef struct s_dlist
-{
-	struct s_dlist	*next;
-	struct s_dlist	*prev;
-	int				content;
-}	t_dlist;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -74,5 +67,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_gnl(int fd);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif
