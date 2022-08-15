@@ -6,14 +6,13 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:41:06 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/09 14:02:21 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/15 14:15:07 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 void	init_stacks(t_stack *a, t_stack *b)
 {
-	
 	a->head = NULL;
 	a->tail = NULL;
 	b->head = NULL;
@@ -50,12 +49,36 @@ void	dlist_add_front(t_stack *l, int elem)
 	l->head = new;
 }
 
-void	view(t_stack l)
+int	popfront(t_stack *l)
 {
-	t_node *aff = l.head;
-	while(aff)
-	{
-		printf("%d\n", aff->content);
-		aff = aff->next;
-	}
+	int	val;
+
+	t_node	*temp = l->head;
+	if (!temp)
+		return(-1);
+	val = temp->content;
+	l->head = temp->next;
+	if (l->head)
+		l->head->prev = NULL;
+	else
+		l->tail = NULL;
+	free (temp);
+	return (val);
+}
+
+int	popback(t_stack *l)
+{
+	int	val;
+
+	t_node	*temp = l->tail;
+	if (!temp)
+		return(-1);
+	val = temp->content;
+	l->tail = temp->prev;
+	if (l->tail)
+		l->tail->next = NULL;
+	else
+		l->head = NULL;
+	free (temp);
+	return (val);
 }

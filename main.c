@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:29 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/10 14:18:53 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/15 15:16:41 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ int	main(int argc, char **argv)
 		ft_error("Not enough arguments");
 	if (argc >= 2)
 		create_list(argc, argv, &stack_a);
+	view(stack_a);
+	ft_reverse_rotate(&stack_a);
+	printf("stack_a:\n");
 	view(stack_a);
 	return(0);
 }
