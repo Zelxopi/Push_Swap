@@ -6,13 +6,13 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:37 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/10 14:16:13 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/18 14:09:28 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_is_char_digit(char *str)
+void	is_char_digit(char *str)
 {
 	while(*str)
 	{

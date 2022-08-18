@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:29 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/15 15:16:41 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/18 14:09:34 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void create_list(int argc, char **argv, t_stack *stack_a)
 		check_twin(args);
 		while (args[j])
 		{
-			ft_is_char_digit(args[j]);
+			is_char_digit(args[j]);
 			value = ft_atoi(args[j++]);
 			if (value == 'f')
 			ft_error("One of your value does not fit an int");
