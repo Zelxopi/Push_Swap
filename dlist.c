@@ -6,11 +6,12 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:41:06 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/15 14:15:07 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:02:23 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	init_stacks(t_stack *a, t_stack *b)
 {
 	a->head = NULL;
@@ -21,13 +22,14 @@ void	init_stacks(t_stack *a, t_stack *b)
 
 void	dlist_add_back(t_stack *l, int elem)
 {
-	t_node *new = malloc(sizeof(t_node));
-	if(!new)
+	t_node	*new = malloc(sizeof(t_node));
+
+	if (!new)
 		exit(0);
 	new->content = elem;
 	new->prev = l->tail;
 	new->next = NULL;
-	if(l->tail)
+	if (l->tail)
 		l->tail->next = new;
 	else
 		l->head = new;
@@ -36,7 +38,8 @@ void	dlist_add_back(t_stack *l, int elem)
 
 void	dlist_add_front(t_stack *l, int elem)
 {
-	t_node *new = malloc(sizeof(t_node));
+	t_node	*new = malloc(sizeof(t_node));
+
 	if (!new)
 		exit(0);
 	new->content = elem;
@@ -51,11 +54,11 @@ void	dlist_add_front(t_stack *l, int elem)
 
 int	popfront(t_stack *l)
 {
-	int	val;
-
+	int		val;
 	t_node	*temp = l->head;
+
 	if (!temp)
-		return(-1);
+		return (-1);
 	val = temp->content;
 	l->head = temp->next;
 	if (l->head)
@@ -68,11 +71,11 @@ int	popfront(t_stack *l)
 
 int	popback(t_stack *l)
 {
-	int	val;
-
+	int		val;
 	t_node	*temp = l->tail;
+
 	if (!temp)
-		return(-1);
+		return (-1);
 	val = temp->content;
 	l->tail = temp->prev;
 	if (l->tail)

@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:37 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 14:09:28 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:04:18 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	is_char_digit(char *str)
 {
-	while(*str)
+	while (*str)
 	{
 		if (*str == '-')
 			str++;
 		if (*str >= '0' && *str <= '9')
 			str++;
 		else
-		ft_error("is not digit");
+			ft_error("is not digit");
 	}
 }
 

@@ -6,13 +6,13 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:29 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 14:09:34 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:03:30 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void create_list(int argc, char **argv, t_stack *stack_a)
+void	create_list(int argc, char **argv, t_stack *stack_a)
 {
 	int		i;
 	int		j;
@@ -31,7 +31,7 @@ void create_list(int argc, char **argv, t_stack *stack_a)
 			is_char_digit(args[j]);
 			value = ft_atoi(args[j++]);
 			if (value == 'f')
-			ft_error("One of your value does not fit an int");
+				ft_error("One of your value does not fit an int");
 			dlist_add_back(stack_a, value);
 		}
 		j = 0;
@@ -40,11 +40,10 @@ void create_list(int argc, char **argv, t_stack *stack_a)
 
 int	main(int argc, char **argv)
 {
-	t_stack stack_a;
-	t_stack stack_b;
+	t_stack	stack_a;
+	t_stack	stack_b;
 
 	init_stacks(&stack_a, &stack_b);
-	
 	if (argc < 2)
 		ft_error("Not enough arguments");
 	if (argc >= 2)
@@ -53,5 +52,5 @@ int	main(int argc, char **argv)
 	ft_reverse_rotate(&stack_a);
 	printf("stack_a:\n");
 	view(stack_a);
-	return(0);
+	return (0);
 }

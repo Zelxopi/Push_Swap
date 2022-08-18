@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:03:44 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 14:09:20 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:06:11 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_node
 	int				content;
 	struct s_node	*next;
 	struct s_node	*prev;
-} t_node;
+}	t_node;
 
 typedef struct s_stack
 {

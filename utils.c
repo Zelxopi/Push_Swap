@@ -6,11 +6,11 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:11:51 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/15 14:05:21 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:05:15 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 void	ft_error(char *str)
 {
@@ -22,8 +22,9 @@ void	ft_error(char *str)
 
 void	view(t_stack l)
 {
-	t_node *aff = l.head;
-	while(aff)
+	t_node	*aff = l.head;
+
+	while (aff)
 	{
 		printf("%d\n", aff->content);
 		aff = aff->next;

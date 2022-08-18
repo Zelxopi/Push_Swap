@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:32:28 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/15 15:16:19 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/18 15:59:29 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_swap(t_stack *l)
 {
-	t_node *temp = malloc(sizeof(t_node));
-	t_node *third = malloc(sizeof(t_node));
-	
+	t_node	*temp = malloc(sizeof(t_node));
+	t_node	*third = malloc(sizeof(t_node));
+
 	third = l->head->next->next;
 	temp = l->head->next;
 	temp->next = l->head;
@@ -35,7 +35,7 @@ void	ft_push(t_stack *src, t_stack *dest)
 	dlist_add_front(dest, elem);
 }
 
-void ft_rotate(t_stack *l)
+void	ft_rotate(t_stack *l)
 {
 	int	elem;
 
