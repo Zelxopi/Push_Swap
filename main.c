@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:29 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 16:03:30 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:19:51 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 			if (value == 'f')
 				ft_error("One of your value does not fit an int");
 			dlist_add_back(stack_a, value);
+			stack_a->size++;
 		}
 		j = 0;
 	}
@@ -48,9 +49,11 @@ int	main(int argc, char **argv)
 		ft_error("Not enough arguments");
 	if (argc >= 2)
 		create_list(argc, argv, &stack_a);
+	index_init(&stack_a);
+	index_from_smallest(&stack_a);
 	view(stack_a);
-	ft_reverse_rotate(&stack_a);
-	printf("stack_a:\n");
-	view(stack_a);
+	// move(&stack_a, &stack_b, "rra");
+	// printf("stack_a:\n");
+	// view(stack_a);
 	return (0);
 }

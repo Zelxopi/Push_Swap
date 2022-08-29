@@ -6,7 +6,7 @@
 #    By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/04 12:49:31 by mtrembla          #+#    #+#              #
-#    Updated: 2022/08/14 12:22:34 by mtrembla         ###   ########.fr        #
+#    Updated: 2022/08/24 11:28:02 by mtrembla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC =	dlist.c \
 		parsing.c \
 		utils.c \
 		moves.c \
+		sort.c \
 
 OBJ =	$(SRC:.c=.o)
 
@@ -37,7 +38,7 @@ $(NAME): $(OBJ) $(SRC)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(LIBFT)
 
 clean:
-	@$(MAKE) fclean -C libft
+	@$(MAKE) clean -C libft
 	@$(RM) $(OBJ) 
 
 fclean: clean

@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:03:44 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 16:06:11 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:17:24 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ typedef struct s_node
 	int				content;
 	struct s_node	*next;
 	struct s_node	*prev;
+	int				index;
 }	t_node;
 
 typedef struct s_stack
 {
 	t_node	*head;
 	t_node	*tail;
+	int		size;
 }	t_stack;
 
 //parsing
@@ -48,5 +50,9 @@ void	move(t_stack *a, t_stack *b, char *move);
 //utils
 void	view(t_stack l);
 void	ft_error(char *str);
-
+void	index_init(t_stack *l);
+//sort
+int	check_index(t_stack *l);
+void	index_from_smallest(t_stack *l);
+int	find_smallest(t_stack *l);
 #endif

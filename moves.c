@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:32:28 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 15:59:29 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/23 13:26:20 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,5 @@ void	move(t_stack *a, t_stack *b, char *move)
 		ft_reverse_rotate(a);
 	if (ft_strcmp(move, "rrb") == 0 || ft_strcmp(move, "rrr") == 0)
 		ft_reverse_rotate(b);
+	printf("%s\n", move);
 }	

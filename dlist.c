@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 12:41:06 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 16:02:23 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:12:20 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	init_stacks(t_stack *a, t_stack *b)
 {
+	a->size = 0;
+	b->size = 0;
 	a->head = NULL;
 	a->tail = NULL;
 	b->head = NULL;

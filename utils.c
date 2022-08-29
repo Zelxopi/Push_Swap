@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:11:51 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 16:05:15 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/29 10:40:13 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,19 @@ void	view(t_stack l)
 
 	while (aff)
 	{
-		printf("%d\n", aff->content);
+		printf("content:%d\n", aff->content);
+		printf("index: %d\n", aff->index);
 		aff = aff->next;
+	}
+}
+
+void	index_init(t_stack *l)
+{
+	t_node	*temp = l->head;
+
+	while (temp)
+	{
+		temp->index = -1;
+		temp = temp->next;
 	}
 }
