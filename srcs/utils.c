@@ -1,63 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 11:24:53 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/30 11:29:07 by mtrembla         ###   ########.fr       */
+/*   Created: 2022/07/23 14:11:51 by mtrembla          #+#    #+#             */
+/*   Updated: 2022/08/30 17:46:24 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
-void	index_from_smallest(t_stack *l)
+void	ft_error(char *str)
 {
-	t_node	*temp;
-	int		nbr;
-	int		i;
+	ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd(str, 2);
+	ft_putstr_fd("\n", 2);
+	exit(0);
+}
 
-	temp = l->head;
-	nbr = find_smallest(l);
-	i = 1;
-	while (check_index(l))
+void	view(t_stack l)
+{
+	t_node	*aff;
+
+	aff = l.head;
+	while (aff)
 	{
-		while (temp)
-		{
-			if (temp->content == nbr)
-				temp->index = i++;
-			temp = temp->next;
-		}
-		temp = l->head;
-		nbr++;
+		printf("content:%d\n", aff->content);
+		printf("index: %d\n", aff->index);
+		aff = aff->next;
 	}
 }
 
-int	find_smallest(t_stack *l)
+void	index_init(t_stack *l)
 {
 	t_node	*temp;
-	t_node	*smallest;
 
 	temp = l->head;
-	smallest = l->head;
 	while (temp)
 	{
-		if (temp->content < smallest->content)
-			smallest = temp;
+		temp->index = -1;
 		temp = temp->next;
 	}
-	return (smallest->content);
 }
 
-int	check_index(t_stack *l)
+int	is_it_sorted(t_stack *l)
 {
 	t_node	*temp;
 
-	temp = l->head;
-	while (temp)
+	temp = l->head->next;
+	while (temp->next)
 	{
-		if (temp->index == -1)
+		if (temp->content < temp->prev->content
+			|| temp->content > temp->next->content)
 			return (1);
 		temp = temp->next;
 	}

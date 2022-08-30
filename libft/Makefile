@@ -6,7 +6,7 @@
 #    By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/22 12:48:17 by mtrembla          #+#    #+#              #
-#    Updated: 2022/08/09 14:40:33 by mtrembla         ###   ########.fr        #
+#    Updated: 2022/08/30 17:30:21 by mtrembla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,7 @@ SRCS = ft_isalpha.c \
 	   ft_putnbr_fd.c \
 	   ft_gnl.c \
 	   ft_strcmp.c \
-	 
-BONUS =	ft_lstnew.c \
+	 	ft_lstnew.c \
 	  	ft_lstadd_front.c \
 	 	ft_lstsize.c \
 		ft_lstlast.c \
@@ -66,24 +65,21 @@ CFLAGS = -Wall -Wextra -Werror -c
 AR = ar rc
 RM = rm -f
 OBJS = $(SRCS:.c=.o)
-BONUS_OBJS = $(BONUS:.c=.o)
 
 $(NAME): 
-		$(CC) $(CFLAGS) $(SRCS)
-		$(AR) $(NAME) $(OBJS)
+		@$(CC) $(CFLAGS) $(SRCS)
+		@$(AR) $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-		$(RM) $(OBJS)
-		$(RM) $(BONUS_OBJS)
+		@$(RM) $(OBJS)
 
 fclean: clean
-		$(RM) $(NAME)
+		@$(RM) $(NAME)
 
 re:	fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
-		$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+lib: all clean
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

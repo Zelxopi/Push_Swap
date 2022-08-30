@@ -6,11 +6,11 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:37 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/18 16:04:18 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:46:26 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	is_char_digit(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:32:28 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/23 13:26:20 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:46:27 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_swap(t_stack *l)
 {
