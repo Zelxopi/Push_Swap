@@ -24,8 +24,9 @@ void	init_stacks(t_stack *a, t_stack *b)
 
 void	dlist_add_back(t_stack *l, int elem)
 {
-	t_node	*new = malloc(sizeof(t_node));
+	t_node	*new;
 
+	new = malloc(sizeof(t_node));
 	if (!new)
 		exit(0);
 	new->content = elem;
@@ -40,8 +41,9 @@ void	dlist_add_back(t_stack *l, int elem)
 
 void	dlist_add_front(t_stack *l, int elem)
 {
-	t_node	*new = malloc(sizeof(t_node));
+	t_node	*new;
 
+	new = malloc(sizeof(t_node));
 	if (!new)
 		exit(0);
 	new->content = elem;
@@ -57,8 +59,9 @@ void	dlist_add_front(t_stack *l, int elem)
 int	popfront(t_stack *l)
 {
 	int		val;
-	t_node	*temp = l->head;
+	t_node	*temp;
 
+	temp = l->head;
 	if (!temp)
 		return (-1);
 	val = temp->content;
@@ -74,8 +77,9 @@ int	popfront(t_stack *l)
 int	popback(t_stack *l)
 {
 	int		val;
-	t_node	*temp = l->tail;
+	t_node	*temp;
 
+	temp = l->tail;
 	if (!temp)
 		return (-1);
 	val = temp->content;

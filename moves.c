@@ -14,8 +14,8 @@
 
 void	ft_swap(t_stack *l)
 {
-	t_node	*temp = malloc(sizeof(t_node));
-	t_node	*third = malloc(sizeof(t_node));
+	t_node	*temp;
+	t_node	*third;
 
 	third = l->head->next->next;
 	temp = l->head->next;

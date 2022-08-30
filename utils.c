@@ -22,8 +22,9 @@ void	ft_error(char *str)
 
 void	view(t_stack l)
 {
-	t_node	*aff = l.head;
+	t_node	*aff;
 
+	aff = l.head;
 	while (aff)
 	{
 		printf("content:%d\n", aff->content);
@@ -34,8 +35,9 @@ void	view(t_stack l)
 
 void	index_init(t_stack *l)
 {
-	t_node	*temp = l->head;
+	t_node	*temp;
 
+	temp = l->head;
 	while (temp)
 	{
 		temp->index = -1;

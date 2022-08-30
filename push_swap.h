@@ -52,7 +52,7 @@ void	view(t_stack l);
 void	ft_error(char *str);
 void	index_init(t_stack *l);
 //sort
-int	check_index(t_stack *l);
 void	index_from_smallest(t_stack *l);
-int	find_smallest(t_stack *l);
+int		find_smallest(t_stack *l);
+int		check_index(t_stack *l);
 #endif

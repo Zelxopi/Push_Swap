@@ -14,10 +14,13 @@
 
 void	index_from_smallest(t_stack *l)
 {
-	t_node	*temp = l->head;
-	int nbr = find_smallest(l);
-	int	i = 1;
-	
+	t_node	*temp;
+	int		nbr;
+	int		i;
+
+	temp = l->head;
+	nbr = find_smallest(l);
+	i = 1;
 	while (check_index(l))
 	{
 		while (temp)
@@ -31,24 +34,27 @@ void	index_from_smallest(t_stack *l)
 	}
 }
 
-int find_smallest(t_stack *l)
+int	find_smallest(t_stack *l)
 {
-	t_node	*temp = l->head;
-	t_node  *smallest = l->head;
-	
+	t_node	*temp;
+	t_node	*smallest;
+
+	temp = l->head;
+	smallest = l->head;
 	while (temp)
 	{
 		if (temp->content < smallest->content)
 			smallest = temp;
 		temp = temp->next;
 	}
-	return(smallest->content);
+	return (smallest->content);
 }
 
 int	check_index(t_stack *l)
 {
-	t_node	*temp = l->head;
+	t_node	*temp;
 
+	temp = l->head;
 	while (temp)
 	{
 		if (temp->index == -1)
