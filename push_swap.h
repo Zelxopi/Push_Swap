@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:03:44 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/29 12:17:24 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/08/30 11:28:25 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	move(t_stack *a, t_stack *b, char *move);
 void	view(t_stack l);
 void	ft_error(char *str);
 void	index_init(t_stack *l);
-//sort
+//index
 void	index_from_smallest(t_stack *l);
 int		find_smallest(t_stack *l);
 int		check_index(t_stack *l);

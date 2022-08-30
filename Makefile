@@ -6,7 +6,7 @@
 #    By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/04 12:49:31 by mtrembla          #+#    #+#              #
-#    Updated: 2022/08/24 11:28:02 by mtrembla         ###   ########.fr        #
+#    Updated: 2022/08/30 11:28:34 by mtrembla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC =	dlist.c \
 		parsing.c \
 		utils.c \
 		moves.c \
-		sort.c \
+		index.c \
 
 OBJ =	$(SRC:.c=.o)
 
