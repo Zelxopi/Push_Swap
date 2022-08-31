@@ -6,20 +6,25 @@
 #    By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/04 12:49:31 by mtrembla          #+#    #+#              #
-#    Updated: 2022/08/30 18:17:49 by mtrembla         ###   ########.fr        #
+#    Updated: 2022/08/31 15:06:09 by mtrembla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC =	srcs/dlist.c \
-		srcs/main.c \
-		srcs/parsing.c \
-		srcs/utils.c \
-		srcs/moves.c \
-		srcs/index.c \
+SRCS =	dlist.c \
+		main.c \
+		parsing.c \
+		utils.c \
+		moves.c \
+		index.c \
 
-OBJ =	$(SRC:.c=.o)
+OBJS =	$(SRCS:.c=.o)
+
+SDIR = srcs
+ODIR = objs
+SFIX = $(addprefix $(SDIR)/, $(SRCS))
+OFIX = $(addprefix $(ODIR)/, $(OBJS))
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror -g
@@ -27,18 +32,21 @@ RM = rm -rf
 
 LIBFT =	./libft/libft.a
 
-all: $(NAME)
-
-%.o: %.c
+$(ODIR)/%.o: $(SDIR)/%.c
 	@$(CC) $(FLAGS) -c $< -o $@
 	@echo "\033[92m.\033[0m\c"
 
-$(NAME): $(OBJ) $(SRC)
+$(NAME): $(ODIR) $(OFIX)
 	@$(MAKE)  lib -C libft
-	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(LIBFT)
+	@$(CC) $(FLAGS) $(OFIX) -o $(NAME) $(LIBFT)
+
+$(ODIR): 
+	mkdir -p $(ODIR)
+
+all: $(NAME)
 
 clean:
-	@$(RM) $(OBJ)
+	@$(RM) $(OFIX) $(ODIR)
 	@echo "🧹"
 
 fclean: clean
