@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:32:28 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/30 17:46:27 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:49:19 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void	move(t_stack *a, t_stack *b, char *move)
 	if (ft_strcmp(move, "sb") == 0 || ft_strcmp(move, "ss") == 0)
 		ft_swap(b);
 	if (ft_strcmp(move, "pa") == 0)
-		ft_push(a, b);
-	if (ft_strcmp(move, "pb") == 0)
 		ft_push(b, a);
+	if (ft_strcmp(move, "pb") == 0)
+		ft_push(a, b);
 	if (ft_strcmp(move, "ra") == 0 || ft_strcmp(move, "rr") == 0)
 		ft_rotate(a);
 	if (ft_strcmp(move, "rb") == 0 || ft_strcmp(move, "rr") == 0)

@@ -6,25 +6,26 @@
 #    By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/04 12:49:31 by mtrembla          #+#    #+#              #
-#    Updated: 2022/08/31 15:06:09 by mtrembla         ###   ########.fr        #
+#    Updated: 2022/09/01 13:53:58 by mtrembla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS =	dlist.c \
+SRC =	dlist.c \
 		main.c \
 		parsing.c \
 		utils.c \
 		moves.c \
 		index.c \
+		sort.c \
 
-OBJS =	$(SRCS:.c=.o)
+OBJ =	$(SRC:.c=.o)
 
-SDIR = srcs
-ODIR = objs
-SFIX = $(addprefix $(SDIR)/, $(SRCS))
-OFIX = $(addprefix $(ODIR)/, $(OBJS))
+SDIR = src
+ODIR = obj
+SFIX = $(addprefix $(SDIR)/, $(SRC))
+OFIX = $(addprefix $(ODIR)/, $(OBJ))
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror -g
@@ -41,7 +42,7 @@ $(NAME): $(ODIR) $(OFIX)
 	@$(CC) $(FLAGS) $(OFIX) -o $(NAME) $(LIBFT)
 
 $(ODIR): 
-	mkdir -p $(ODIR)
+	@mkdir -p $(ODIR)
 
 all: $(NAME)
 

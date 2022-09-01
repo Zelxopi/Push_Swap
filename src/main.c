@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:29 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/30 17:46:29 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:55:13 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int	main(int argc, char **argv)
 	index_init(&stack_a);
 	index_from_smallest(&stack_a);
 	view(stack_a);
-	printf("sorted: %d\n", is_it_sorted(&stack_a));
-	// move(&stack_a, &stack_b, "rra");
-	// printf("stack_a:\n");
-	// view(stack_a);
+	printf("\n/////moves/////\n");
+	sort5(&stack_a, &stack_b);
+	printf("\n-----post move-----\n");
+	view(stack_a);
 	return (0);
 }
