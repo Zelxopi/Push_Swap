@@ -67,7 +67,7 @@ int	stack_sizer(t_stack *l)
 
 	temp = l->head;
 	size = 0;
-	while(temp)
+	while (temp)
 	{
 		size++;
 		temp = temp->next;

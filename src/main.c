@@ -51,14 +51,8 @@ int	main(int argc, char **argv)
 		create_list(argc, argv, &stack_a);
 	index_init(&stack_a);
 	index_from_smallest(&stack_a);
-	view(stack_a);
 	if (is_it_sorted(&stack_a))
 	ft_error("alredy sorted");
 	algo_starter(&stack_a, &stack_b);
-	// printf("\n/////moves/////\n");
-	printf("\n-----post move-----\nStack_a\n");
-	view(stack_a);
-	printf("Stack b:\n");
-	view(stack_b);
 	return (0);
 }

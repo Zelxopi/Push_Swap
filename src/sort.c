@@ -14,19 +14,21 @@
 
 void	algo_starter(t_stack *a, t_stack *b)
 {
-	t_data	*data = malloc(sizeof(t_data));
-	data->size = stack_sizer(a);
+	t_data	*data;
 
+	data = malloc(sizeof(t_data));
+	data->size = stack_sizer(a);
 	if (data->size <= 3)
-	sort3(a, b);
+		sort3(a, b);
 	else if (data->size <= 5)
-	sort5(a, b);
+		sort5(a, b);
 	else
 	{
 		data->median = (data->size / 2);
 		data->buffer = (data->size * 0.1);
 		if (data->buffer == 0)
 		data->buffer = 1;
+		data->bufferadd = data->buffer;
 		yeet_to_b(a, b, data);
 		back_to_a(a, b, data);
 	}
@@ -39,12 +41,12 @@ int	fit_in_buffer(t_stack *l, t_data *data)
 	temp = l->head;
 	while (temp)
 	{
-		if (temp->index >= data->buffermin 
+		if (temp->index >= data->buffermin
 			&& temp->index <= data->buffermax)
 			return (1);
 		temp = temp->next;
 	}
-	return(0);
+	return (0);
 }
 
 void	sort3(t_stack *a, t_stack *b)
@@ -58,13 +60,12 @@ void	sort3(t_stack *a, t_stack *b)
 		top = a->head->content;
 		middle = a->head->next->content;
 		bottom = a->head->next->next->content;
-		
 		if (top > middle && bottom > top)
-		move(a, b, "sa");
+			move(a, b, "sa");
 		else if (middle > top && middle > bottom)
-		move(a, b, "rra");
+			move(a, b, "rra");
 		else if (top > middle && top > bottom)
-		move(a, b, "ra");
+			move(a, b, "ra");
 	}
 }
 
@@ -74,11 +75,12 @@ void	sort5(t_stack *a, t_stack *b)
 	{
 		if (a->head->index == 1 || a->head->index == 2)
 			move(a, b, "pb");
-		else move(a, b, "ra");
+		else
+			move(a, b, "ra");
 	}
 	sort3(a, b);
 	while (stack_sizer(b) != 0)
-	move(a, b, "pa");
+		move(a, b, "pa");
 	if (!is_it_sorted(a))
-	move(a, b, "sa");
+		move(a, b, "sa");
 }

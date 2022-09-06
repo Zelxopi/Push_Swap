@@ -32,9 +32,9 @@ int	ft_atoi(const char *str)
 	{
 		nb = nb * 10 + (str[i++] - '0');
 		if ((nb * negative) > INT_MAX)
-			return ('f');
+			return (-1);
 		if ((nb * negative) < INT_MIN)
-			return ('f');
+			return (0);
 	}
 	return (nb * negative);
 }

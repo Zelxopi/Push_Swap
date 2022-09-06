@@ -36,6 +36,7 @@ typedef struct s_data
 {
 	int		median;
 	int		buffer;
+	int		bufferadd;
 	int		buffermin;
 	int		buffermax;
 	int		size;
@@ -73,7 +74,7 @@ void	sort3(t_stack *a, t_stack *b);
 void	sort5(t_stack *a, t_stack *b);
 //algo
 void	yeet_to_b(t_stack *a, t_stack *b, t_data *data);
-char	*wheres_the_biggest(t_stack *l);
+char	*wheres_the_biggest(t_stack *l, t_data *data);
 void	back_to_a(t_stack *a, t_stack *b, t_data *data);
 
 #endif
