@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:11:51 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/01 15:43:00 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/06 13:44:02 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ int	is_it_sorted(t_stack *l)
 	{
 		if (temp->content < temp->prev->content
 			|| temp->content > temp->next->content)
-			return (1);
+			return (0);
 		temp = temp->next;
 	}
-	return (0);
+	return (1);
 }
 
 int	stack_sizer(t_stack *l)

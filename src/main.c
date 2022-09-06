@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:29 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/01 15:55:13 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:32:12 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,13 @@ int	main(int argc, char **argv)
 	index_init(&stack_a);
 	index_from_smallest(&stack_a);
 	view(stack_a);
-	printf("\n/////moves/////\n");
-	sort5(&stack_a, &stack_b);
-	printf("\n-----post move-----\n");
+	if (is_it_sorted(&stack_a))
+	ft_error("alredy sorted");
+	algo_starter(&stack_a, &stack_b);
+	// printf("\n/////moves/////\n");
+	printf("\n-----post move-----\nStack_a\n");
 	view(stack_a);
+	printf("Stack b:\n");
+	view(stack_b);
 	return (0);
 }

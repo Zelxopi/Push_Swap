@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:03:44 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/01 15:31:37 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:30:11 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
+typedef struct s_data
+{
+	int		median;
+	int		buffer;
+	int		buffermin;
+	int		buffermax;
+	int		size;
+}	t_data;
+
 //parsing
 void	is_char_digit(char *str);
 void	check_twin(char **argv);
@@ -52,12 +61,19 @@ void	view(t_stack l);
 void	ft_error(char *str);
 void	index_init(t_stack *l);
 int		is_it_sorted(t_stack *l);
-int	stack_sizer(t_stack *l);
+int		stack_sizer(t_stack *l);
 //index
 void	index_from_smallest(t_stack *l);
 int		find_smallest(t_stack *l);
 int		check_index(t_stack *l);
 //sort
+void	algo_starter(t_stack *a, t_stack *b);
+int		fit_in_buffer(t_stack *l, t_data *data);
 void	sort3(t_stack *a, t_stack *b);
 void	sort5(t_stack *a, t_stack *b);
+//algo
+void	yeet_to_b(t_stack *a, t_stack *b, t_data *data);
+char	*wheres_the_biggest(t_stack *l);
+void	back_to_a(t_stack *a, t_stack *b, t_data *data);
+
 #endif
