@@ -30,8 +30,6 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 		{
 			is_char_digit(args[j]);
 			value = ft_atoi(args[j++]);
-			if (value == 'f')
-				ft_error("One of your value does not fit an int");
 			dlist_add_back(stack_a, value);
 			stack_a->size++;
 		}
@@ -52,7 +50,9 @@ int	main(int argc, char **argv)
 	index_init(&stack_a);
 	index_from_smallest(&stack_a);
 	if (is_it_sorted(&stack_a))
-	ft_error("alredy sorted");
+		ft_error("already sorted");
 	algo_starter(&stack_a, &stack_b);
+	if (!is_it_sorted(&stack_a))
+		ft_error("not sorted");
 	return (0);
 }

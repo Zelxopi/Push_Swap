@@ -45,6 +45,7 @@ typedef struct s_data
 //parsing
 void	is_char_digit(char *str);
 void	check_twin(char **argv);
+int		ft_atoi(const char *str);
 //dlist
 void	init_stacks(t_stack *a, t_stack *b);
 void	dlist_add_back(t_stack *l, int elem);

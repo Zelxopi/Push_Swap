@@ -14,17 +14,13 @@
 
 void	ft_swap(t_stack *l)
 {
-	t_node	*temp;
-	t_node	*third;
+	int	one;
+	int	two;
 
-	third = l->head->next->next;
-	temp = l->head->next;
-	temp->next = l->head;
-	temp->prev = NULL;
-	l->head = temp;
-	l->head->next->next = third;
-	l->head->next->prev = l->head;
-	l->head->next->next->prev = l->head->next;
+	one = popfront(l);
+	two = popfront(l);
+	dlist_add_front(l, one);
+	dlist_add_front(l, two);
 }
 
 void	ft_push(t_stack *src, t_stack *dest)
@@ -53,21 +49,25 @@ void	ft_reverse_rotate(t_stack *l)
 
 void	move(t_stack *a, t_stack *b, char *move)
 {
-	if (ft_strcmp(move, "sa") == 0 || ft_strcmp(move, "ss") == 0)
+	if ((stack_sizer(a) > 1 && ft_strcmp(move, "sa") == 0)
+		|| ft_strcmp(move, "ss") == 0)
 		ft_swap(a);
-	if (ft_strcmp(move, "sb") == 0 || ft_strcmp(move, "ss") == 0)
+	else if ((stack_sizer(b) > 1 && ft_strcmp(move, "sb") == 0)
+		|| ft_strcmp(move, "ss") == 0)
 		ft_swap(b);
-	if (ft_strcmp(move, "pa") == 0)
+	else if (ft_strcmp(move, "pa") == 0 && b->head)
 		ft_push(b, a);
-	if (ft_strcmp(move, "pb") == 0)
+	else if (ft_strcmp(move, "pb") == 0 && a->head)
 		ft_push(a, b);
-	if (ft_strcmp(move, "ra") == 0 || ft_strcmp(move, "rr") == 0)
+	else if (ft_strcmp(move, "ra") == 0 || ft_strcmp(move, "rr") == 0)
 		ft_rotate(a);
-	if (ft_strcmp(move, "rb") == 0 || ft_strcmp(move, "rr") == 0)
+	else if (ft_strcmp(move, "rb") == 0 || ft_strcmp(move, "rr") == 0)
 		ft_rotate(b);
-	if (ft_strcmp(move, "rra") == 0 || ft_strcmp(move, "rrr") == 0)
+	else if (ft_strcmp(move, "rra") == 0 || ft_strcmp(move, "rrr") == 0)
 		ft_reverse_rotate(a);
-	if (ft_strcmp(move, "rrb") == 0 || ft_strcmp(move, "rrr") == 0)
+	else if (ft_strcmp(move, "rrb") == 0 || ft_strcmp(move, "rrr") == 0)
 		ft_reverse_rotate(b);
+	else
+		return ;
 	printf("%s\n", move);
 }	

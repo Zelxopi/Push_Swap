@@ -25,7 +25,7 @@ void	yeet_to_b(t_stack *a, t_stack *b, t_data *data)
 			{
 				move(a, b, "pb");
 				if (b->head->index < data->median)
-				move(a, b, "rb");
+					move(a, b, "rb");
 			}
 			else
 				move(a, b, "ra");

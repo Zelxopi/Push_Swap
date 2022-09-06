@@ -25,7 +25,12 @@ void	algo_starter(t_stack *a, t_stack *b)
 	else
 	{
 		data->median = (data->size / 2);
-		data->buffer = (data->size * 0.1);
+		if (data->size < 500)
+			data->buffer = (data->size * 0.15);
+		if (data->size < 1000)
+			data->buffer = 33;
+		if (data->size >= 1000)
+			data->buffer = (data->size * 0.03);
 		if (data->buffer == 0)
 		data->buffer = 1;
 		data->bufferadd = data->buffer;
