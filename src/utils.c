@@ -32,3 +32,19 @@ void	view(t_stack l)
 		aff = aff->next;
 	}
 }
+
+void	ft_free(t_stack *l)
+{
+	t_node	*temp;
+	t_node	*next;
+
+	next = l->head;
+	while (next)
+	{
+		temp = next;
+		next = next->next;
+		free(temp);
+	}
+	l->head = NULL;
+	l->tail = NULL;
+}

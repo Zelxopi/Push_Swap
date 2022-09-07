@@ -75,7 +75,8 @@ void	back_to_a(t_stack *a, t_stack *b, t_data *data);
 int		fit_in_buffer(t_stack *l, t_data *data);
 char	*wheres_the_biggest(t_stack *l, t_data *data);
 //utils
-void	view(t_stack l);
 void	ft_error(char *str);
+void	view(t_stack l);
+void	ft_free(t_stack *l);
 
 #endif

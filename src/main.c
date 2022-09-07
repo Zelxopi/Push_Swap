@@ -33,6 +33,9 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 			dlist_add_back(stack_a, value);
 			stack_a->size++;
 		}
+		while (args[--j])
+			free(args[j]);
+		free(args);
 		j = 0;
 	}
 }
@@ -50,9 +53,14 @@ int	main(int argc, char **argv)
 	index_init(&stack_a);
 	index_from_smallest(&stack_a);
 	if (is_it_sorted(&stack_a))
-		ft_error("already sorted");
+	{
+		printf("Already Sorted\n");
+		ft_free(&stack_a);
+	}
 	algo_starter(&stack_a, &stack_b);
 	if (!is_it_sorted(&stack_a))
-		ft_error("not sorted");
+		ft_error("Failure to sort");
+	ft_free(&stack_a);
+	ft_free(&stack_b);
 	return (0);
 }

@@ -37,6 +37,8 @@ void	algo_starter(t_stack *a, t_stack *b)
 		send_to_b(a, b, data);
 		back_to_a(a, b, data);
 	}
+	if (is_it_sorted(a))
+		free(data);
 }
 
 void	sort3(t_stack *a, t_stack *b)
