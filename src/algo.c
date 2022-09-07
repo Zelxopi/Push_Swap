@@ -6,13 +6,76 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:23:52 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/06 14:31:56 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/07 11:34:33 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	yeet_to_b(t_stack *a, t_stack *b, t_data *data)
+void	algo_starter(t_stack *a, t_stack *b)
+{
+	t_data	*data;
+
+	data = malloc(sizeof(t_data));
+	data->size = stack_sizer(a);
+	if (data->size <= 3)
+		sort3(a, b);
+	else if (data->size <= 5)
+		sort5(a, b);
+	else
+	{
+		data->median = (data->size / 2);
+		if (data->size < 500)
+			data->buffer = (data->size * 0.15);
+		if (data->size < 1000)
+			data->buffer = 33;
+		if (data->size >= 1000)
+			data->buffer = (data->size * 0.03);
+		if (data->buffer == 0)
+		data->buffer = 1;
+		data->bufferadd = data->buffer;
+		send_to_b(a, b, data);
+		back_to_a(a, b, data);
+	}
+}
+
+void	sort3(t_stack *a, t_stack *b)
+{
+	int	top;
+	int	middle;
+	int	bottom;
+
+	while (!is_it_sorted(a))
+	{	
+		top = a->head->content;
+		middle = a->head->next->content;
+		bottom = a->head->next->next->content;
+		if (top > middle && bottom > top)
+			move(a, b, "sa");
+		else if (middle > top && middle > bottom)
+			move(a, b, "rra");
+		else if (top > middle && top > bottom)
+			move(a, b, "ra");
+	}
+}
+
+void	sort5(t_stack *a, t_stack *b)
+{
+	while (stack_sizer(a) != 3)
+	{
+		if (a->head->index == 1 || a->head->index == 2)
+			move(a, b, "pb");
+		else
+			move(a, b, "ra");
+	}
+	sort3(a, b);
+	while (stack_sizer(b) != 0)
+		move(a, b, "pa");
+	if (!is_it_sorted(a))
+		move(a, b, "sa");
+}
+
+void	send_to_b(t_stack *a, t_stack *b, t_data *data)
 {
 	while (a->head)
 	{
@@ -32,32 +95,6 @@ void	yeet_to_b(t_stack *a, t_stack *b, t_data *data)
 		}
 		data->buffer += data->bufferadd;
 	}
-}
-
-char	*wheres_the_biggest(t_stack *l, t_data *data)
-{
-	int		h;
-	int		t;
-	t_node	*temp;
-
-	h = 0;
-	t = 0;
-	temp = l->head;
-	while (temp->index != data->size)
-	{
-		h++;
-		temp = temp->next;
-	}
-	temp = l->tail;
-	while (temp->index != data->size)
-	{
-		t++;
-		temp = temp->prev;
-	}
-	if (h <= t)
-		return ("rb");
-	else
-		return ("rrb");
 }
 
 void	back_to_a(t_stack *a, t_stack *b, t_data *data)

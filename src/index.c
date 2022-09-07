@@ -6,11 +6,23 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:24:53 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/30 17:46:31 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/07 11:09:31 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	index_init(t_stack *l)
+{
+	t_node	*temp;
+
+	temp = l->head;
+	while (temp)
+	{
+		temp->index = -1;
+		temp = temp->next;
+	}
+}
 
 void	index_from_smallest(t_stack *l)
 {

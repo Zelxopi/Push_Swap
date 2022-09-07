@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:37 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/08/30 17:46:26 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/07 11:26:06 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,34 @@ int	ft_atoi(const char *str)
 			ft_error("One of your value does not fit an int");
 	}
 	return (nb * negative);
+}
+
+int	is_it_sorted(t_stack *l)
+{
+	t_node	*temp;
+
+	temp = l->head->next;
+	while (temp->next)
+	{
+		if (temp->content < temp->prev->content
+			|| temp->content > temp->next->content)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
+int	stack_sizer(t_stack *l)
+{
+	t_node	*temp;
+	int		size;
+
+	temp = l->head;
+	size = 0;
+	while (temp)
+	{
+		size++;
+		temp = temp->next;
+	}
+	return (size);
 }

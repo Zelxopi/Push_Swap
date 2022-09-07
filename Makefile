@@ -6,7 +6,7 @@
 #    By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/04 12:49:31 by mtrembla          #+#    #+#              #
-#    Updated: 2022/09/06 12:24:31 by mtrembla         ###   ########.fr        #
+#    Updated: 2022/09/07 11:18:03 by mtrembla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC =	dlist.c \
 		utils.c \
 		moves.c \
 		index.c \
-		sort.c \
+		algo_utils.c \
 		algo.c \
 
 OBJ =	$(SRC:.c=.o)
