@@ -21,26 +21,26 @@ void	is_char_digit(char *str)
 		if (*str >= '0' && *str <= '9')
 			str++;
 		else
-			ft_error("is not digit");
+			ft_error();
 	}
 }
 
-void	check_twin(char **argv)
+void	check_twin(t_stack *l)
 {
-	int	i;
-	int	j;
+	t_node	*i;
+	t_node	*j;
 
-	i = 0;
-	while (argv[i])
+	i = l->head;
+	while (i)
 	{
-		j = i + 1;
-		while (argv[j])
+		j = i->next;
+		while (j)
 		{
-			if (ft_strcmp(argv[i], argv[j]) == 0)
-				ft_error("Doublon");
-			j++;
+			if (i->content == j->content)
+				ft_error();
+			j = j->next;
 		}
-		i++;
+		i = i->next;
 	}
 }
 
@@ -64,9 +64,9 @@ int	ft_atoi(const char *str)
 	{
 		nb = nb * 10 + (str[i++] - '0');
 		if ((nb * negative) > INT_MAX)
-			ft_error("One of your value does not fit an int");
+			ft_error();
 		if ((nb * negative) < INT_MIN)
-			ft_error("One of your value does not fit an int");
+			ft_error();
 	}
 	return (nb * negative);
 }

@@ -50,7 +50,7 @@ int		popfront(t_stack *l);
 int		popback(t_stack *l);
 //parsing
 void	is_char_digit(char *str);
-void	check_twin(char **argv);
+void	check_twin(t_stack *l);
 int		ft_atoi(const char *str);
 int		is_it_sorted(t_stack *l);
 int		stack_sizer(t_stack *l);
@@ -75,7 +75,7 @@ void	back_to_a(t_stack *a, t_stack *b, t_data *data);
 int		fit_in_buffer(t_stack *l, t_data *data);
 char	*wheres_the_biggest(t_stack *l, t_data *data);
 //utils
-void	ft_error(char *str);
+void	ft_error();
 void	view(t_stack l);
 void	ft_free(t_stack *l);
 

@@ -19,13 +19,11 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 	int		value;
 	char	**args;
 
-	check_twin(argv);
 	i = 1;
 	j = 0;
 	while (argv[i] && i < argc)
 	{
 		args = ft_split(argv[i++], ' ');
-		check_twin(args);
 		while (args[j])
 		{
 			is_char_digit(args[j]);
@@ -38,6 +36,7 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 		free(args);
 		j = 0;
 	}
+	check_twin(stack_a);
 }
 
 int	main(int argc, char **argv)
@@ -47,7 +46,7 @@ int	main(int argc, char **argv)
 
 	init_stacks(&stack_a, &stack_b);
 	if (argc < 2)
-		ft_error("Not enough arguments");
+		ft_error();
 	if (argc >= 2)
 		create_list(argc, argv, &stack_a);
 	index_init(&stack_a);
@@ -59,7 +58,7 @@ int	main(int argc, char **argv)
 	}
 	algo_starter(&stack_a, &stack_b);
 	if (!is_it_sorted(&stack_a))
-		ft_error("Failure to sort");
+		ft_error();
 	ft_free(&stack_a);
 	ft_free(&stack_b);
 	return (0);
