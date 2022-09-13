@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:03:44 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/07 11:34:32 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/13 12:17:20 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,8 @@ void	ft_reverse_rotate(t_stack *l);
 void	move(t_stack *a, t_stack *b, char *move);
 //index
 void	index_init(t_stack *l);
-void	index_from_smallest(t_stack *l);
-int		find_smallest(t_stack *l);
 int		check_index(t_stack *l);
+void	indexisation(t_stack *l);
 //algo
 void	algo_starter(t_stack *a, t_stack *b);
 void	sort3(t_stack *a, t_stack *b);

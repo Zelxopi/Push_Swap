@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:29 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/06 14:32:12 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/13 12:17:13 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 			dlist_add_back(stack_a, value);
 			stack_a->size++;
 		}
-		while (args[--j])
-			free(args[j]);
-		free(args);
+		// while (args[--j])
+		// 	free(args[j]);
+		//free(args);
 		j = 0;
 	}
 	check_twin(stack_a);
@@ -50,7 +50,8 @@ int	main(int argc, char **argv)
 	if (argc >= 2)
 		create_list(argc, argv, &stack_a);
 	index_init(&stack_a);
-	index_from_smallest(&stack_a);
+	indexisation(&stack_a);
+	view(stack_a);
 	if (is_it_sorted(&stack_a))
 	{
 		printf("Already Sorted\n");
