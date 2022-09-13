@@ -31,9 +31,9 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 			dlist_add_back(stack_a, value);
 			stack_a->size++;
 		}
-		// while (args[--j])
-		// 	free(args[j]);
-		//free(args);
+		while (args[--j])
+			free(args[j]);
+		free(args);
 		j = 0;
 	}
 	check_twin(stack_a);
@@ -51,7 +51,6 @@ int	main(int argc, char **argv)
 		create_list(argc, argv, &stack_a);
 	index_init(&stack_a);
 	indexisation(&stack_a);
-	view(stack_a);
 	if (is_it_sorted(&stack_a))
 	{
 		printf("Already Sorted\n");
