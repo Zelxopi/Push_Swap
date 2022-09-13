@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:34:37 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/07 11:26:06 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/13 13:35:50 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,18 @@ int	ft_atoi(const char *str)
 int	is_it_sorted(t_stack *l)
 {
 	t_node	*temp;
+	int		i;
 
-	temp = l->head->next;
-	while (temp->next)
+	temp = l->head;
+	i = 1;
+	while (temp)
 	{
-		if (temp->content < temp->prev->content
-			|| temp->content > temp->next->content)
-			return (0);
+		if (temp->index != i)
+			return(0);
 		temp = temp->next;
+		i++;
 	}
-	return (1);
+	return(1);
 }
 
 int	stack_sizer(t_stack *l)

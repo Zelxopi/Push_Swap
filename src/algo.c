@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:23:52 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/13 11:22:04 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/13 13:40:59 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	algo_starter(t_stack *a, t_stack *b)
 
 	data = malloc(sizeof(t_data));
 	data->size = stack_sizer(a);
-	if (data->size <= 3)
+	if (data->size == 2)
+		move(a, b, "sa");
+	else if (data->size <= 3)
 		sort3(a, b);
 	else if (data->size <= 5)
 		sort5(a, b);
