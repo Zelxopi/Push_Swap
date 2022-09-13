@@ -24,13 +24,14 @@ void	index_init(t_stack *l)
 	}
 }
 
-void indexisation(t_stack *l)
+void	indexisation(t_stack *l)
 {
-	t_node	*temp = l->head;
+	t_node	*temp;
 	t_node	*smallest;
-	int 	i;
+	int		i;
 
 	i = 1;
+	temp = l->head;
 	while (check_index(l))
 	{
 		while (temp->index != -1)

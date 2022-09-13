@@ -18,9 +18,7 @@ void	algo_starter(t_stack *a, t_stack *b)
 
 	data = malloc(sizeof(t_data));
 	data->size = stack_sizer(a);
-	if (data->size == 2)
-		move(a, b, "sa");
-	else if (data->size <= 3)
+	if (data->size <= 3)
 		sort3(a, b);
 	else if (data->size <= 5)
 		sort5(a, b);
@@ -34,13 +32,12 @@ void	algo_starter(t_stack *a, t_stack *b)
 		if (data->size >= 1000)
 			data->buffer = (data->size * 0.03);
 		if (data->buffer == 0)
-		data->buffer = 1;
+			data->buffer = 1;
 		data->bufferadd = data->buffer;
 		send_to_b(a, b, data);
 		back_to_a(a, b, data);
 	}
-	if (is_it_sorted(a))
-		free(data);
+	free(data);
 }
 
 void	sort3(t_stack *a, t_stack *b)
@@ -49,6 +46,11 @@ void	sort3(t_stack *a, t_stack *b)
 	int	middle;
 	int	bottom;
 
+	if (stack_sizer(a) == 2)
+	{
+		move(a, b, "sa");
+		return ;
+	}
 	while (!is_it_sorted(a))
 	{	
 		top = a->head->content;

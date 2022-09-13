@@ -74,25 +74,25 @@ int	ft_atoi(const char *str)
 int	is_it_sorted(t_stack *l)
 {
 	t_node	*temp;
-	
+
 	temp = l->head;
 	if (stack_sizer(l) == 2)
 	{
 		if (temp->content > temp->next->content)
-			return(0);
+			return (0);
 	}
 	else
 	{
 		temp = l->head->next;
 		while (temp->next)
 		{
-			if(temp->content < temp->prev->content
+			if (temp->content < temp->prev->content
 				|| temp->content > temp->next->content)
-				return(0);
+				return (0);
 			temp = temp->next;
 		}
 	}
-	return(1);
+	return (1);
 }
 
 int	stack_sizer(t_stack *l)
