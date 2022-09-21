@@ -24,16 +24,17 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 	while (argv[i] && i < argc)
 	{
 		args = ft_split(argv[i++], ' ');
-		while (args[j])
+		while (args && args[j])
 		{
 			is_char_digit(args[j]);
 			value = ft_atoi(args[j++]);
 			dlist_add_back(stack_a, value);
 			stack_a->size++;
 		}
-		while (args[--j])
-			free(args[j]);
-		free(args);
+		while (j >= 0 && args[--j])
+			free(args[j--]);
+		if (args)
+			free(args);
 		j = 0;
 	}
 	check_twin(stack_a);
