@@ -16,35 +16,50 @@ void	ft_swap(t_stack *l)
 {
 	int	one;
 	int	two;
+	int	ione;
+	int	itwo;
 
+	ione = l->head->index;
+	itwo = l->head->next->index;
 	one = popfront(l);
 	two = popfront(l);
 	dlist_add_front(l, one);
+	l->head->index = ione;
 	dlist_add_front(l, two);
+	l->head->index = itwo;
 }
 
 void	ft_push(t_stack *src, t_stack *dest)
 {
 	int	elem;
+	int	i;
 
+	i = src->head->index;
 	elem = popfront(src);
 	dlist_add_front(dest, elem);
+	dest->head->index = i;
 }
 
 void	ft_rotate(t_stack *l)
 {
 	int	elem;
+	int	i;
 
+	i = l->head->index;
 	elem = popfront(l);
 	dlist_add_back(l, elem);
+	l->tail->index = i;
 }
 
 void	ft_reverse_rotate(t_stack *l)
 {
 	int	elem;
+	int	i;
 
+	i = l->tail->index;
 	elem = popback(l);
 	dlist_add_front(l, elem);
+	l->head->index = i;
 }
 
 void	move(t_stack *a, t_stack *b, char *move)
