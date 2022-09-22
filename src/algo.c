@@ -27,11 +27,11 @@ void	algo_starter(t_stack *a, t_stack *b)
 		data->median = (data->size / 2);
 		if (data->size < 500)
 			data->buffer = (data->size * 0.15);
-		if (data->size < 1000)
+		else if (data->size < 1000)
 			data->buffer = 33;
-		if (data->size >= 1000)
+		else if (data->size >= 1000)
 			data->buffer = (data->size * 0.03);
-		if (data->buffer == 0)
+		else if (data->buffer == 0)
 			data->buffer = 1;
 		data->bufferadd = data->buffer;
 		send_to_b(a, b, data);
@@ -114,7 +114,7 @@ void	back_to_a(t_stack *a, t_stack *b, t_data *data)
 			move(a, b, wheres_the_biggest(b, data));
 		}
 		move(a, b, "pa");
-		if (a->head->index > a->head->next->index)
+		if (a->head->next && a->head->index > a->head->next->index)
 		{
 			move(a, b, "sa");
 			data->size--;

@@ -52,3 +52,29 @@ char	*wheres_the_biggest(t_stack *l, t_data *data)
 	else
 		return ("rrb");
 }
+
+// char	*find_the_way(t_stack *l, t_data *data)
+// {
+// 	int		h;
+// 	int		t;
+// 	t_node	*temp;
+
+// 	h = 0;
+// 	t = 0;
+// 	temp = l->head;
+// 	while (temp->index < data->buffermin || temp->index > data->buffermax)
+// 	{
+// 		h++;
+// 		temp = temp->next;
+// 	}
+// 	temp = l->tail;
+// 	while (temp->index < data->buffermin || temp->index > data->buffermax)
+// 	{
+// 		t++;
+// 		temp = temp->prev;
+// 	}
+// 		if (h <= t)
+// 		return ("ra");
+// 	else
+// 		return ("rra");
+// }
