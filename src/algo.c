@@ -6,7 +6,7 @@
 /*   By: mtrembla <mtrembla@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 12:23:52 by mtrembla          #+#    #+#             */
-/*   Updated: 2022/09/13 13:57:20 by mtrembla         ###   ########.fr       */
+/*   Updated: 2022/09/22 11:37:11 by mtrembla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,17 @@ void	back_to_a(t_stack *a, t_stack *b, t_data *data)
 	while (b->head)
 	{
 		while (b->head->index != data->size)
+		{
+			if (b->head->index == data->size - 1)
+				move(a, b, "pa");
 			move(a, b, wheres_the_biggest(b, data));
+		}
 		move(a, b, "pa");
+		if (a->head->index > a->head->next->index)
+		{
+			move(a, b, "sa");
+			data->size--;
+		}
 		data->size--;
 	}
 }
