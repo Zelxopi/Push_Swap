@@ -32,7 +32,7 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 			stack_a->size++;
 		}
 		while (j >= 0 && args[--j])
-			free(args[j--]);
+			free(args[j]);
 		if (args)
 			free(args);
 		j = 0;

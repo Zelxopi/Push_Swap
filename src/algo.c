@@ -31,7 +31,7 @@ void	algo_starter(t_stack *a, t_stack *b)
 			data->buffer = 33;
 		else if (data->size >= 1000)
 			data->buffer = (data->size * 0.03);
-		else if (data->buffer == 0)
+		if (data->buffer == 0)
 			data->buffer = 1;
 		data->bufferadd = data->buffer;
 		send_to_b(a, b, data);
