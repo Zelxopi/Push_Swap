@@ -31,7 +31,7 @@ void	create_list(int argc, char **argv, t_stack *stack_a)
 			dlist_add_back(stack_a, value);
 			stack_a->size++;
 		}
-		while (j >= 0 && args[--j])
+		while (args[--j] && j >= 0)
 			free(args[j]);
 		if (args)
 			free(args);
